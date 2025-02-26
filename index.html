@@ -29,15 +29,6 @@
             width: 80%;
             margin: auto;
         }
-        .product {
-            display: inline-block;
-            width: 250px;
-            margin: 20px;
-            padding: 15px;
-            background-color: #333;
-            border-radius: 10px;
-            text-align: center;
-        }
         img {
             width: 100%;
             border-radius: 10px;
@@ -131,10 +122,21 @@
             height: 200px;
             object-fit: cover;
         }
+        .product {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: top; /* Ensures products stay aligned */
+            position: relative; /* Needed for absolute positioning of the overlay */
+        }
+        
         .out-of-stock {
-        position: relative;
-        opacity: 0.5; /* Makes the div more opaque */
-        pointer-events: none; /* Prevents interaction */
+            opacity: 0.5; /* Makes the div more opaque */
+            pointer-events: none; /* Prevents interaction */
         }
         
         .out-of-stock::after {
@@ -150,6 +152,7 @@
             padding: 10px 20px;
             border-radius: 5px;
         }
+
     </style>
 
 </head>
