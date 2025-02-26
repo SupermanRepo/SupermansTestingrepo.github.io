@@ -131,7 +131,25 @@
             height: 200px;
             object-fit: cover;
         }
-
+        .out-of-stock {
+        position: relative;
+        opacity: 0.5; /* Makes the div more opaque */
+        pointer-events: none; /* Prevents interaction */
+        }
+        
+        .out-of-stock::after {
+            content: "OUT OF STOCK";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.8); /* Red background */
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
     </style>
 
 </head>
@@ -143,7 +161,7 @@
     <p>- Shipping is free!</p>
     
     <div class="container">
-        <div class="product">
+        <div class="item out-of-stock">
             <img src="muha.png" alt="Muha Med Case">
             <h2>2G Muha Med Case</h2>
             <p>Top-tier potency with an ultra-smooth finish. Elevate your sessions with Muha Meds.</p>
@@ -171,7 +189,7 @@
             <p><strong>$190</strong></p>
             <button class="button" onclick="addToCart('2G Ace Ultra Case', 190)">Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="item out-of-stock">
             <img src="Hitz.png" alt="Hitz Case">
             <h2>2G Hitz Case</h2>
             <p>Smooth, flavorful, and hard-hitting. The Hitz Case takes vaping to the next level.</p>
